@@ -9,18 +9,22 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "fonts/",
+        "images/"
       ],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
+      "prefix": "",
       "mobile": false,
       "styles": [
+        "sass/index.scss",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

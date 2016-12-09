@@ -1,0 +1,6 @@
+<div id='new-task-container'>
+  <form (submit)='submit($event, taskTitleEditor.value)'>
+    <input placeholder='Enter task...' (keypress)='onKeypress(taskTitleEditor.value)' [value]='taskTitle' #taskTitleEditor type='text' name='title' class='wk-input' id='new-task'/>
+    <button class='hide' type='submit'>Submit</button>
+  </form>
+</div>

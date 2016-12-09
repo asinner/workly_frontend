@@ -1,0 +1,31 @@
+#invite-member-modal {
+    
+}
+
+.invite-member-block {
+    margin-bottom: 3px;
+}
+
+#invite-member-footer {
+    padding-top: 25px;
+    text-align: center;
+}
+
+#invite-member-controls {
+    padding: 10px 0;
+    text-align: center;
+    i {
+        display: inline-block;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        border-radius: 1000px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+        color: #555;
+        &:hover {
+            background: #EFEFEF;
+        }
+    }
+}

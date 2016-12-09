@@ -1,0 +1,26 @@
+<div id='signup-page'>
+  <div id='signup-form-container'>
+    <form #signupForm='ngForm' (ngSubmit)='submit($event, signupForm)' novalidate>
+      <div class='wk-form-group'>
+        <input class='wk-input' name='firstName' placeholder='First name' [(ngModel)]='req.first_name' [required]='true' type='text'>
+      </div>
+      <div class='wk-form-group'>
+        <input class='wk-input' name='lastName' placeholder='Last name' [(ngModel)]='req.last_name' [required]='true' type='text'>
+      </div>
+      <div class='wk-form-group'>
+        <input class='wk-input' name='email' placeholder='Email' [(ngModel)]='req.email' [required]='true' type='email'>
+      </div>
+      <div class='wk-form-group'>
+        <input class='wk-input' name='password' placeholder='Password' [minlength]='6' [(ngModel)]='req.password' [required]='true'  type='password'>
+      </div>
+      <div class='wk-form-group'>
+        <label id='signup-form-tos-label'>
+          <input name='tos' [value]='true' [(ngModel)]='req.tos' [required]='true' type='checkbox'> I have read and agree to the <a href='/legal' target='_blank'>Privacy Policy</a>
+        </label>
+      </div>
+      <button type='submit' class='wk-btn wk-btn-block wk-btn-success'>
+        Create account
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div id='app-navbar'>
+  <ul>
+    <li id='app-navbar-logo'>
+      <h1 (click)='goToHome()'>workly</h1>
+    </li>
+  </ul>
+  
+  <ul class='app-navbar-right'>
+
+    <template [ngIf]='!loggedIn'>
+      <li>
+        <a href='javascript:;' (click)='goToSignup()'>
+          Create free account
+        </a>
+      </li>
+      <li>
+        <a href='javascript:;' (click)='goToLogin()'>
+          Log In
+        </a>
+      </li>
+    </template>
+
+    <li *ngIf='projects'>
+      <a href='javascript:;' *ngIf='currentProject' (click)='goToProject(currentProject.id)'>
+        {{currentProject.name}}
+      </a>
+      
+      <ul>
+        <li *ngFor='let project of projects'>
+          <a href='javascript:;' (click)='goToProject(project.id)'>
+            {{project.name}}
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li *ngIf='currentUser'>
+      <a href='javascript:;'>
+        {{currentUser.first_name}} {{currentUser.last_name}}
+      </a>
+    </li>
+
+    <li *ngIf='loggedIn'>
+      <a href='javascript:;' (click)='goToLogout()'>
+        Log out
+      </a>
+    </li>
+  </ul>
+  <!--<ul>
+    <li (click)='goToProjects()'>
+      Projects
+    </li>
+    <li>
+      <button type='button' class='wk-btn wk-btn-success' id='app-navbar-new-task-btn'>
+        <i class='icon-edit'></i> New task</button>
+    </li>
+  </ul>-->
+</div>

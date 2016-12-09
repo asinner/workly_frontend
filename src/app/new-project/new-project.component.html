@@ -1,0 +1,43 @@
+<div id='new-project-page'>
+  <i class='icon-close2' id='new-project-page-close'></i>
+  <div id='new-project-card'>
+
+    <div *ngIf='showKey === ShowKey.Step1' class='fadein-fast'>
+      <form (submit)='submitNewProjectForm()'>
+        <div id='new-project-card-header'>
+          <i class='icon-document-add' id='new-project-card-header-icon'></i>
+          <h1 id='new-project-card-heading'>Create a new project</h1>
+          <p id='new-project-card-instructions'>Enter a project name</p>
+        </div>
+        <div class='wk-form-group' id='new-project-card-last-form-group'>
+          <input autofocus type="text" placeholder="Name" class="wk-input wk-input-underline">
+        </div>
+        <button type="submit" class="wk-btn wk-btn-success">
+          <i class='icon-check2'></i>
+        </button>
+      </form>
+    </div>
+
+    <div *ngIf='showKey === ShowKey.Step2' class='fadein-fast'>
+      <form>
+        <div id='new-project-card-header'>
+          <i class='icon-users2' id='new-project-card-header-icon'></i>
+          <h1 id='new-project-card-heading'>Create your team</h1>
+          <p id='new-project-card-instructions'>Select company members</p>
+        </div>
+        <div class='wk-form-group' id='new-project-card-last-form-group'>
+          <input autofocus type="text" placeholder="Name" class="wk-input wk-input-underline">
+        </div>
+        <button type="submit" class="wk-btn wk-btn-success">
+          <i class='icon-check2'></i>
+        </button>
+      </form>
+    </div>
+
+    <div>
+      <i class='icon-chevron2-left'></i>
+      <i class='icon-chevron2-right'></i>
+    </div>
+
+  </div>
+</div>

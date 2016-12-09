@@ -1,0 +1,9 @@
+<div id='project-master-page' class='fadein-fast'>
+  <div id='project-master'>
+    <div id='project-master-search'>
+      <i class='icon-search'></i>
+      <input (keyup)='search(searchInput.value)' #searchInput type='text' class='wk-input wk-input-underline' placeholder='Search by name'>
+    </div>
+    <project-master-item *ngFor='let id of projectIds' [id]='id'></project-master-item>
+  </div>
+</div>

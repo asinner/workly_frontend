@@ -1,0 +1,15 @@
+.drag-handle {
+    height: 16px;
+    width: 7px;
+    div {
+        display: inline-block;
+        margin-bottom: 1px;
+        width: 3px;
+        height: 3px;
+        background: #CCC;
+        float: left;
+        &:nth-child(odd) {
+            margin-right: 1px;
+        }
+    }
+}

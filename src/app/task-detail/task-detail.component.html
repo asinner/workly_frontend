@@ -1,0 +1,65 @@
+<div id='task-detail-page' *ngIf='task'>
+    <div id='task-toolbar'>
+        <i class='icon-edit' (click)='showEditor()'></i>
+        <i class='icon-attachment2' (click)='showFileViewer(fileInput)'></i>
+        <input type='file' [style.display]="'none'" #fileInput (change)='filesChanged($event)'/>
+        <i class='icon-trash' (click)='deleteTask()'></i>
+        
+    </div>
+
+    <div id='task-details' *ngIf='!editing'>
+        <div id='task-description'>
+            <div id='task-title'>{{task.title}}</div>
+            {{task.description}}
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div id='task-details' *ngIf='editing'>
+        <form (submit)='updateTask()'>
+            <div class='wk-form-group'>
+                <input type='text' class='wk-input' name='task-title' [(ngModel)]='taskBuffer.title'>
+            </div>
+            <div class='wk-form-group'>
+                <textarea class='wk-input' resize name='task-description' [(ngModel)]='taskBuffer.description'></textarea>
+            </div>
+            <button type='submit' class='wk-btn wk-btn-success wk-btn-sm'> 
+                Save
+            </button>
+            <button (click)='hideEditor()' type='button' class='wk-btn wk-btn-cancel wk-btn-sm'> 
+                Cancel
+            </button>
+        </form>
+    </div>
+
+    <div id='task-body'>
+        <div id='task-comments'>
+            <comment *ngFor='let id of commentIds' [id]='id'>
+            </comment>
+
+            <p *ngIf='commentIds && commentIds.length === 0'>
+                No comments yet
+            </p>
+        </div>
+    </div>
+    <div id='task-footer'>
+        <comment-form [taskId]='task.id'></comment-form>
+    </div>
+
+    <br>
+
+        <form #form action="https://worklydev3.s3.amazonaws.com/" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="key" value="${filename}">
+            <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjoiMjAxNi0xMi0wOFQyMzoxMjoxNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJ3b3JrbHlkZXYzIn0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCIiXSx7IngtYW16LWNyZWRlbnRpYWwiOiJBS0lBSU9SQ0E2RVdHU0kyR0o1US8yMDE2MTIwOC91cy13ZXN0LTIvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxNjEyMDhUMjIxMjE1WiJ9XX0=">
+            <input type="hidden" name="x-amz-algorithm" value="AWS4-HMAC-SHA256">
+            <input type="hidden" name="x-amz-credential" value="AKIAIORCA6EWGSI2GJ5Q/20161208/us-west-2/s3/aws4_request">
+            <input type="hidden" name="x-amz-date" value="20161208T221215Z">
+            <input type="hidden" name="x-amz-signature" value="106f5437ff18c728f4c1daa0b0ba34f54d42425d25049d8e8ed5aeafe6a0f851">
+            <input type="file" name="file">
+            <button type="submit" (click)='form.submit()'>Submit</button>
+        </form>
+
+</div>

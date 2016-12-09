@@ -1,0 +1,77 @@
+<div id='companies-page' class='fadein'>
+  <div id='new-company-card' class='clearfix'>
+    <div id='new-company-card-left'>
+      <!-- TODO(andrews): Move this into a hosted solution -->
+      <img id='new-company-card-image' src='/images/company1.jpeg'>
+    </div>
+
+    <div id='new-company-card-right'>
+      <div class='fadein' *ngIf='showKey == ShowKey.Step1'>
+        <div id='new-company-card-header-icon' class='text-center'>
+          <i class='icon-briefcase'></i>
+        </div>
+        <h1 id='new-company-card-header'>Create your company account</h1>
+
+        <form #newCompanyForm="ngForm" id='new-company-form' novalidate (submit)='submitCompanyForm($event, newCompanyForm)'>
+          <label [class.error-text]='newCompanyForm.submitted && newCompanyForm.invalid' id='new-company-form-instructions'>
+            Enter your company name.
+          </label>
+
+          <div class='wk-form-group' id='new-company-form-last-form-group'>
+            <input required name='accountName' [(ngModel)]='account.name' class="wk-input wk-input-underline" id='new-company-card-name-input' type="text">
+          </div>
+
+          <div class='wk-form-group'>
+            <button type='submit' class='wk-btn wk-btn-secondary'>
+              <!--asdfasdf-->
+              <i class='icon-arrow-right22'></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class='fadein' *ngIf='showKey == ShowKey.Step2'>
+        <div id='new-company-card-header-icon' class='text-center'>
+          <i class='icon-users2'></i>
+        </div>
+        <h1 id='new-company-card-header'>Invite people to your company
+        </h1>
+
+        <form #inviteForm="ngForm" id='invite-form' novalidate (submit)='submitInviteForm($event, inviteForm)'>
+          <label id='new-company-form-instructions'>
+            Send email invitations.
+          </label>
+          <i id='new-invite' class='icon-add_circle' (click)='addInvite()'></i>
+
+          <div *ngFor='let invite of invitations; let i = index;' class='wk-form-group invite-group'>
+            <i class='close icon-trash' (click)='removeInvite(i)'></i>
+            <input [name]='"invite" + i' [(ngModel)]='invitations[i].email' placeholder='Enter an email' class="wk-input wk-input-underline" type="email">
+          </div>
+
+          <div class='wk-form-group'>
+            <button type='submit' class='wk-btn wk-btn-secondary'>
+              <i class='icon-arrow-right22'></i>
+            </button>
+            <button type='submit' class='wk-btn wk-btn-default' id='invite-skip-step'>
+              Skip this step
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class='fadein' *ngIf='showKey == ShowKey.Step3'>
+        <div id='new-company-card-header-icon' class='text-center'>
+          <i class='icon-trophy'></i>
+        </div>
+        <h1 id='new-company-card-header'>Welcome, {{account.name}}</h1>
+        <p id='new-company-welcome-text'>
+          You've successfully setup your company account. Start by creating your first project.
+        </p>
+        <button type='button' class='wk-btn wk-btn-secondary'>
+          Go to projects <i class='icon-arrow-right22'></i>
+        </button>
+      </div>
+   
+    </div>
+  </div>
+</div>

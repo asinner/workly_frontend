@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AppActions } from './app.actions';
+import { AppStore } from './app.store';
+import { TaskStore } from './stores/task.store';
+import { ProjectStore } from './stores/project.store';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private actions: AppActions, private appStore: AppStore, private taskStore: TaskStore, private projectStore: ProjectStore) {}
+
+  ngOnInit() {
+    this.actions.init();
+  }
 }

@@ -1,0 +1,12 @@
+<form (submit)='submit($event)'>
+  <div id='comment-form'>
+    <div id='comment-form-body'>
+      <textarea id='comment-form-editor' name='comment-editor' [(ngModel)]='body' class='wk-input' resize></textarea>
+    </div>
+    <div id='comment-form-footer'>
+        <button type='submit' class='wk-btn wk-btn-success wk-btn-sm'>
+          Comment
+        </button>
+    </div>
+  </div>
+</form>

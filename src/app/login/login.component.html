@@ -1,0 +1,31 @@
+<div id='login-page'>
+  <!--<h1 id='login-form-header' class='text-center'><i class='icon-lock'></i> Log in below</h1>-->
+  <form id='login-form' novalidate #loginForm='ngForm' (submit)='submit($event, loginForm)'>
+    <div class='wk-form-group' class='login-form-error' *ngIf='loginForm.submitted && loginForm.invalid && !loginErr'>
+      <i class='icon-cancel'></i>
+      Please enter a valid email/password
+    </div>
+
+    <div class='wk-form-group' class='login-form-error' *ngIf='loginErr'>
+      <i class='icon-cancel'></i> {{loginErr}}
+    </div>
+
+    <div class='wk-form-group'>
+      <input class='wk-input' autofocus placeholder='Email' name='email' type='email' [(ngModel)]='credentials.email' required>
+    </div>
+
+    <div class='wk-form-group'>
+      <input class='wk-input' placeholder='Password' name='password' type='password' [(ngModel)]='credentials.password' required>
+    </div>
+
+    <div class='wk-form-group' id='login-form-submit-btn-container'>
+      <button [disabled]='isSubmitting' type='submit' class='wk-btn wk-btn-success wk-btn-block'>
+        Log in
+      </button>
+    </div>
+
+    <div class='form-group text-center' id='login-form-links'>
+      <a href='javascript:;' id='login-forgot-password-link'>Forgot password?</a><a href='javascript:;' id='login-forgot-password-link'>Create an account</a>
+    </div>
+  </form>
+</div>

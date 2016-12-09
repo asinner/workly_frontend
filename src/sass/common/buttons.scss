@@ -1,0 +1,46 @@
+button {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif
+}
+.wk-btn {
+    display: inline-block;
+    font-size: 13px;
+    padding: 12px 17px;
+    line-height: 13px;
+    border: none;
+    border-radius: 2px;
+    background: #EEE;
+    transition: 100ms all ease-in-out;
+    &.wk-btn-sm {
+        font-size: 11px;
+        padding: 7px 13px;
+    }
+
+    &.wk-btn-success {
+        background: #2196f3;;
+        color: #FFF;
+        &:hover {
+            background: darken(#2196f3, 15);
+        }
+    }
+
+    &.wk-btn-round {
+        border-radius: 1000px;
+    }
+
+    &.wk-btn-block {
+        width: 100%;
+    }
+
+    &.wk-btn-secondary {
+        background: #F44336;
+        color: #FFF;
+        &:hover {
+            background: darken(#F44336, 15);
+        }
+    }
+    &.wk-btn-default {
+        background: #FFF;
+        color: #555;
+    }
+}

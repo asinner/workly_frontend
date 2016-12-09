@@ -1,0 +1,13 @@
+<div id='members-modal' class='modal'>
+  <div class='modal-header'>
+    <i class='icon-users2'></i> Members ({{users.length}})
+  </div>
+  <div class='member-card' *ngFor='let user of users'>
+    <user-avatar [user]='user'></user-avatar>
+    <div class='member-name'>{{user.first_name}} {{user.last_name}}</div>
+    <div class='member-email'>{{user.email}}</div>
+  </div>
+  <div class='modal-footer'>
+    <i class='icon-add'></i>
+  </div>
+</div>

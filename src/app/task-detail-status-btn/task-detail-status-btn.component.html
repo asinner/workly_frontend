@@ -1,0 +1,9 @@
+<button type='button' id='task-detail-status-btn' [class.completed]='task.completed'>
+  <template [ngIf]='task.completed === false'>
+    <i class='icon-check2'></i> Mark complete
+  </template>
+
+  <template [ngIf]='task.completed'>
+    <i class='icon-check2'></i> Complete
+  </template>
+</button>

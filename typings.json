@@ -1,0 +1,6 @@
+{
+  "name": "workly",
+  "dependencies": {
+    "flux": "registry:npm/flux#2.1.1+20160601175240"
+  }
+}

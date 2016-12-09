@@ -1,0 +1,3 @@
+<div class='user-avatar'>
+    <img class='user-avatar-img' [src]='user.avatar_url' *ngIf='user.avatar_url'><span *ngIf='!user.avatar_url' class='user-avatar-name'>{{user.first_name[0]}}{{user.last_name[0]}}</span>
+</div>

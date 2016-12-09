@@ -1,0 +1,23 @@
+#task-detail-secondary {
+    background: #FFF;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    padding: 15px;
+}
+
+.task-detail-secondary-item {
+    height: 50px;
+    position: relative;
+    margin-bottom: 5px;
+    label {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        font-size: 11px;
+        color: #BBB;
+    }
+    .user-card {
+        position: absolute;
+        bottom: 0px;
+    }
+}

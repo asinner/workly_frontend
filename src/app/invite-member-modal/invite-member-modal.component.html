@@ -1,0 +1,25 @@
+<div class='modal' id='invite-member-modal'>
+    <br>
+    <div class='modal-header text-center'>
+        <i class='icon-mail'></i> Invite team members
+    </div>
+    <br>
+    <form>
+        <div class='invite-member-block' *ngFor='let invitation of invitations; let i = index;'>
+          <input type='text' [name]='"invite" + i' [(ngModel)]='invitation.email' placeholder='Email' class='wk-input wk-input-underline'>
+        </div>
+
+        <div id='invite-member-controls'>
+          <i class='icon-add'></i>
+        </div>
+
+        <div id='invite-member-footer'>
+            <button type='button' class='btn btn-default'>
+                Cancel
+            </button>
+            <button type='submit' class='btn btn-success'>
+                <i class='icon-mail'></i> Send invites
+            </button> 
+        </div>
+    </form>
+</div>

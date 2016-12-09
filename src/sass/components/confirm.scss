@@ -1,0 +1,26 @@
+@import '../common/colors';
+
+#confirm-page {
+    padding: 100px 25px;
+}
+
+#confirm-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    i {
+        color: $blue;
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: rgba(0,0,0,0.7);
+        font-size: 13px;
+        line-height: 18px;
+    }
+}

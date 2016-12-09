@@ -1,0 +1,3 @@
+<div class='task' *ngIf='task' (click)='goToTask()' [class.completed]='task.completed'>
+  <div class='icon-wk-checkbox wk-checkbox' [class.checked]='task.completed' (click)='toggleTaskCompletion($event)'></div> {{task.title}}
+</div>  
